@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><title>Smart‑Agro Monitor</title></head>
+<body>
+    <h1>Real‑time chart</h1>
+
+    <!-- add a query‑string to bust the cache every 5 s -->
+    <img id="chart" src="/plot.png">
+
+    <script>
+      setInterval(() => {
+        document.getElementById('chart').src = '/plot.png?t=' + Date.now();
+      }, 5000);
+    </script>
+</body>
+</html>
+
